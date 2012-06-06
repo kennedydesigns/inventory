@@ -1,0 +1,8 @@
+%html
+  %body
+    %h3 Create a new Item
+    = semantic_form_for [@supplier, @item] do |f|
+      = f.semantic_errors
+      = f.input :name
+      = f.input :price
+      = f.commit_button

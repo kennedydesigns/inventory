@@ -1,0 +1,10 @@
+%html
+  %body
+    %h3 Welcome to the #{@supplier.name} page
+    %h4 Available items
+    - unless @supplier.items.any?
+      %p Sorry, there are no items for this supplier
+    - else
+      - @supplier.items.each do |i|
+        %ul
+          %li= link_to i.name, supplier_item_path(@supplier, i)
